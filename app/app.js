@@ -10,14 +10,25 @@ import path, {dirname} from 'path';
 import { fileURLToPath } from 'url'; 
 const __dirname = dirname(fileURLToPath(import.meta.url)); //storing current directory path (for creating paths from this file more easily)
 
+//Import mongoose module
+import mongoose from 'mongoose';
+
 //Import router
 import indexRouter from "./routes/index.route.server.js";
 
 //Configuration module
-import { secret } from "../config/config.js";
+import { MongoURI, secret } from "../config/config.js";
 
 // instantiate app-server
 const app = express();
+
+//Complete the DB confoguration
+mongoose.connect(MongoURI);
+const db = mongoose.connection;
+
+//Listen for connection success or error
+db.on('open' , () => console.log('Connected to MongoDB!'));
+db.on('error', () => console.log('Mongo Connection Error!'));
 
 //setup ViewEngine EJS - previously installed (all modules in node_modules)
 app.set('views', path.join(__dirname, '/views')); //tells application path for views.  views in [current directory]/views.  path.join creates a path from the 2 params passed
