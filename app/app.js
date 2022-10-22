@@ -66,16 +66,13 @@ app.use(express.json());
 app.use(express.urlencoded({extended: false})); //ensures no environment specific encoding causes errors with express
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, '../public'))); //serves static files to this path (files on host machine to be used/executed there such as css and images)
-app.use(session({
-    secret: secret, //for encrypting session values 
-    saveUninitialized: "false", //these lines mean session is lost on reload
-    resave: "false"
-}))
+
+app.use(cors());
 
 // Auth Step 4 - Setup Express Session
 app.use(session({
-    secret: secret,
-    saveUninitialized: false, 
+    secret: secret, //for encrypting session values 
+    saveUninitialized: false, //these lines mean session is lost on reload
     resave: false
 }));
 
