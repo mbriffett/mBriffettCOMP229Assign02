@@ -20,16 +20,25 @@
 #aboutText,
 #contactText,
 #homeText,
-#mission {
+#mission,
+#editPage,
+#rolodex,
+#loginPage {
     margin-top: 13%;
 }
 #btnResume,
 #projects,
-#services {
+#services,
+#registerPage {
     margin-top: 7.5%;
 }
-#btnSubmit {
+#btnSubmit,
+#contactBtns {
     margin-top: 3.25%;
+}
+#btnAddContact {
+    margin-top: 1.5%;
+    margin-bottom: 2.5%;
 }
 #contactCollapse {
     padding: 2.19em;
