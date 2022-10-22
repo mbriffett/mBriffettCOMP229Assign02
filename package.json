@@ -1,9 +1,9 @@
 {
   "name": "comp229-f2022-week3-402",
-  "type": "module",
   "version": "1.0.0",
   "description": "Portfolio Site",
   "main": "server.js",
+  "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon",
