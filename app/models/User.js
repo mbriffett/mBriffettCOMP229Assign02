@@ -1,4 +1,4 @@
-//Matthew Briffett 301247484 Centennial College COMP229 Fall 2022
+// Matthew Briffett 301247484 Centennial College COMP229 Fall 2022
 
 import mongoose from 'mongoose';
 import passportLocalMongoose from 'passport-local-mongoose';
