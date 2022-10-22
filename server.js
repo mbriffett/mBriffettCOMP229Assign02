@@ -6,12 +6,12 @@ import http from 'http';
 
 import app from './app/app.js';
 
-//const PORT = normalizePort(process.env.PORT || 3000); //server defined port or 3000
-app.set('port', normalizePort(process.env.PORT || 3000));
+const PORT = normalizePort(process.env.PORT || 3000); //server defined port or 3000
+app.set('port', PORT);
 
 const server = http.createServer(app); //create web server using express application (express module working with http module here)
 
-server.listen(normalizePort(process.env.PORT || 3000));
+server.listen(PORT);
 server.on('error', onError); //call these functions on error or listening respectively
 server.on('listening', onListening);
 

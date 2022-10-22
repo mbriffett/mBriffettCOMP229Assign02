@@ -55,8 +55,6 @@ export function DisplayContactsEditPage(req, res, next) {
 
 export function ProcessContactsEditPage(req, res, next){
 
-  
-
     let newContact = contactModel({
         _id: req.body.id,
         name: req.body.name,
