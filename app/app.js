@@ -22,7 +22,7 @@ import authRouter from './routes/auth.route.server.js';
 
 // Import Api Routes
 import authApiRouter from './routes/api/auth-api.route.server.js';
-import moviesApiRouter from './routes/api/contacts-api.route.server.js';
+import contactsApiRouter from './routes/api/contacts-api.route.server.js';
 
 //Configuration module
 import { MongoURI, secret } from "../config/config.js";
@@ -117,7 +117,7 @@ app.use('/', authRouter);
 
 // Use API Routes
 app.use('/api/auth', authApiRouter);
-app.use('/api/movies', passport.authenticate('jwt', {session: false}), moviesApiRouter);
+app.use('/api/contacts', passport.authenticate('jwt', {session: false}), contactsApiRouter);
 
 export default app; //exporting express application
 
